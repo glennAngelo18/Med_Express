@@ -20,7 +20,7 @@ import {
 
 import { useRouter } from "next/router";
 import useStyles from "../utils/style";
-import CheckoutWizzard from "../component/CheckoutWizzard";
+import CheckoutWizzard from "../component/checkoutWizzard";
 import { useSnackbar } from "notistack";
 import { getError } from "../utils/error";
 // import axios from "axios";
