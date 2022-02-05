@@ -19,7 +19,7 @@ import {
 import { getError } from "../../../utils/error";
 import { Store } from "../../../utils/Store";
 import Layout from "./../../../component/Layout";
-import useStyles from "../../../utils/styles";
+import useStyles from "./../../../utils/style";
 import { Controller, useForm } from "react-hook-form";
 import { useSnackbar } from "notistack";
 
