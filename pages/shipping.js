@@ -42,7 +42,7 @@ export default function Shipping(props) {
   } = useForm();
   const classes = useStyles();
   const router = useRouter();
-  const { state, dispatch } = useContext(Store);
+  const { dispatch } = useContext(Store);
   // const {
   //   cart: { shippingAddress },
   // } = state;
@@ -55,7 +55,7 @@ export default function Shipping(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [posts, setPosts] = useState(props.posts);
+  const posts = props.posts;
 
   const sendShippingData = async ({
     fullName,

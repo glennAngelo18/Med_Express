@@ -6,19 +6,17 @@ import {
   TextField,
   Typography,
 } from "@material-ui/core";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import Layout from "../component/Layout";
 import useStyles from "../utils/style";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 // import axios from "axios";
-import { Store } from "../utils/Store";
-import Cookies from "js-cookie";
+
 import { Controller, useForm } from "react-hook-form";
 import { useSnackbar } from "notistack";
 // import getError from "../utils/error";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, firestore } from "../lib/firebase";
 import firebase from "firebase/compat/app";
 
 // import { useAuth } from '../component/firebase/AuthUserContext';

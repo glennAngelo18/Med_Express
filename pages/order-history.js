@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
 import NextLink from "next/link";
-import React, { useContext, useState } from "react";
+import React from "react";
 import {
   Grid,
   List,
@@ -55,8 +54,8 @@ function OrderHistory(props) {
   const classes = useStyles();
   // const { userInfo } = state;
 
-  const [posts, setPosts] = useState(props.posts);
-  const [posts2, setPosts2] = useState(props.posts2);
+  const posts = props.posts;
+  const posts2 = props.posts2;
 
   // const [ { loading, error, orders }, dispatch ] = useReducer(reducer, {
   // 	loading: true,

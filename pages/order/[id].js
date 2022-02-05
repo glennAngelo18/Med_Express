@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useReducer, useState } from "react";
+import React, { useContext, useEffect, useReducer } from "react";
 // import { Store } from '../../utils/Store';
 import Layout from "../../component/Layout";
 import dynamic from "next/dynamic";
@@ -20,8 +20,6 @@ import {
 // import Image from 'next/image';
 import { useRouter } from "next/router";
 import useStyles from "../../utils/style";
-import { useSnackbar } from "notistack";
-import { getError } from "../../utils/error";
 import axios from "axios";
 import { usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import { UserContext } from "../../lib/context";
@@ -73,8 +71,8 @@ function Order(props) {
   // const { state } = useContext(Store);
   // const { userInfo } = state;
 
-  const [posts, setPosts] = useState(props.posts);
-  const [posts2, setPosts2] = useState(props.posts2);
+  const posts = props.posts;
+  const posts2 = props.posts2;
 
   //
 
@@ -89,14 +87,13 @@ function Order(props) {
   });
   console.log(shippingClient);
 
-  const [{ order }, dispatch] = useReducer(reducer, {
+  const [{ order }] = useReducer(reducer, {
     loading: true,
     order: {},
     error: "",
   });
 
   const {
-    totalPrice,
     isPaid,
     paidAt,
     isDelivered,
@@ -140,7 +137,6 @@ function Order(props) {
       loadPayPalScript();
     }
   }, [orderItem.id, paypalDispatch, user.token]);
-  const { enqueueSnackbar } = useSnackbar();
 
   /*function createOrder(data, actions) {
     return actions.ordr

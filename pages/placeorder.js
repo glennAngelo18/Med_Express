@@ -29,7 +29,7 @@ import { UserContext } from "../lib/context";
 import { auth, postToJSON, firestore } from "../lib/firebase";
 import "firebase/compat/firestore";
 import firebase from "firebase/compat/app";
-import { v4 as uuidv4, v4 } from "uuid";
+import {  v4 } from "uuid";
 
 //
 
@@ -64,7 +64,6 @@ function PlaceOrder(props) {
 
   const classes = useStyles();
   const router = useRouter();
-  const { user } = useContext(UserContext);
   const { state, dispatch } = useContext(Store);
   const {
     cart: { cartItems, paymentMethod },

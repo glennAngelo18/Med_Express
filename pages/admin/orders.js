@@ -1,6 +1,5 @@
 import axios from "axios";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
 import NextLink from "next/link";
 import React, { useEffect, useContext, useReducer } from "react";
 import {
@@ -66,7 +65,7 @@ function AdminOrders() {
     fetchData();
     //eslint-disable-next-line react-hooks/exhaustive-deps
 
-  }, []);
+  });
   return (
     <Layout title="Orders">
       <Grid container spacing={1}>
