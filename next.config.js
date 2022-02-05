@@ -3,4 +3,7 @@ module.exports = {
   images: {
     domains: ["imgbb.com", "i.ibb.co"],
   },
+  future: {
+    webpack5: true
+  }
 };
