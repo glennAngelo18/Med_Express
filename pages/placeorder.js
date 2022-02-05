@@ -25,7 +25,6 @@ import { useSnackbar } from "notistack";
 import { getError } from "../utils/error";
 // import axios from "axios";
 import Cookies from "js-cookie";
-import { UserContext } from "../lib/context";
 import { auth, postToJSON, firestore } from "../lib/firebase";
 import "firebase/compat/firestore";
 import firebase from "firebase/compat/app";

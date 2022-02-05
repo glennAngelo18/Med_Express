@@ -91,7 +91,7 @@ function AdminProdcuts() {
     }
     //eslint-disable-next-line react-hooks/exhaustive-deps
 
-  }, [successDelete]);
+  }, [successDelete, userInfo.token]);
 
   const { enqueueSnackbar } = useSnackbar();
   const createHandler = async () => {

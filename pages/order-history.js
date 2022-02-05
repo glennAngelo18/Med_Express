@@ -18,7 +18,6 @@ import {
 // import { Store } from "../utils/Store";
 import Layout from "../component/Layout";
 import useStyles from "../utils/style";
-import { UserContext } from "../lib/context";
 import { auth, postToJSON, firestore } from "../lib/firebase";
 
 // function reducer(state, action) {
