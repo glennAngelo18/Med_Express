@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 import { Store } from "../utils/Store";
 // import Cookies from "js-cookie";
 import { Controller, useForm } from "react-hook-form";
-import CheckoutWizzard from "../component/CheckoutWizzard";
+import CheckoutWizzard from "../component/checkoutWizzard";
 import { UserContext } from "../lib/context";
 import { auth, firestore, postToJSON } from "../lib/firebase";
 // import firebase from "firebase/compat/app";

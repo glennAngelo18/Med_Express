@@ -12,7 +12,7 @@ import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import { useSnackbar } from 'notistack';
 import React, { useContext, useEffect, useState } from 'react';
-import CheckoutWizzard from '../component/CheckoutWizzard';
+import CheckoutWizzard from '../component/checkoutWizzard';
 import Layout from '../component/Layout';
 import { Store } from '../utils/Store';
 import useStyles from '../utils/style';
