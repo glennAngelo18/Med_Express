@@ -1,12 +1,10 @@
 import { List, ListItem, Typography, TextField, Button, Link } from '@material-ui/core';
-import axios from 'axios';
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Layout from '../component/Layout';
 import { Store } from '../utils/Store';
 import useStyles from '../utils/style';
-import Cookies from 'js-cookie';
 import { Controller, useForm } from 'react-hook-form';
 import { useSnackbar } from 'notistack';
 import { auth, googleAuthProvider, firestore } from '../lib/firebase';
@@ -19,7 +17,6 @@ export default function Login() {
 	const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 	const router = useRouter();
 	const { redirect } = router.query; // login?redirect=/shipping
-	const { state, dispatch } = useContext(Store);
 	// const { userInfo } = state;
 	// useEffect(() => {
 	// 	if (userInfo) {
@@ -37,7 +34,9 @@ export default function Login() {
 		try {
 			signInWithEmailAndPassword(auth, email, password)
 				.then((authUser) => {
-					console.log('Successfully Signed In');
+					if (authUser) {
+						console.log('Successfully Signed In');
+					}
 					//router.push('/logged_in');
 				})
 				.catch((error) => {

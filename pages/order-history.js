@@ -1,10 +1,8 @@
-import axios from "axios";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
-import React, { useEffect, useContext, useReducer, useState } from "react";
+import React, { useContext, useState } from "react";
 import {
-  CircularProgress,
   Grid,
   List,
   ListItem,
@@ -16,10 +14,8 @@ import {
   TableRow,
   TableCell,
   TableBody,
-  Button,
   ListItemText,
 } from "@material-ui/core";
-import { getError } from "../utils/error";
 // import { Store } from "../utils/Store";
 import Layout from "../component/Layout";
 import useStyles from "../utils/style";
@@ -56,10 +52,8 @@ export async function getServerSideProps() {
 
 function OrderHistory(props) {
   // const { state } = useContext(Store);
-  const router = useRouter();
   const classes = useStyles();
   // const { userInfo } = state;
-  const { user } = useContext(UserContext);
 
   const [posts, setPosts] = useState(props.posts);
   const [posts2, setPosts2] = useState(props.posts2);

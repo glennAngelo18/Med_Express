@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import "../styles/globals.css";
 import { StoreProvider } from "../utils/Store";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
-import { useUserData, useMedData } from "../lib/hooks";
-import { UserContext, MedContext } from "../lib/context";
+import { useUserData } from "../lib/hooks";
+import { UserContext } from "../lib/context";
 
 // added Auth Provider and AuthStateChanged
 

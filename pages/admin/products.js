@@ -89,6 +89,8 @@ function AdminProdcuts() {
     } else {
       fetchData();
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [successDelete]);
 
   const { enqueueSnackbar } = useSnackbar();

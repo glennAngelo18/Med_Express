@@ -39,7 +39,6 @@ function reducer(state, action) {
 
 function AdminOrders() {
   const { state } = useContext(Store);
-  const router = useRouter();
   const classes = useStyles();
   const { userInfo } = state;
 
@@ -65,6 +64,8 @@ function AdminOrders() {
       }
     };
     fetchData();
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, []);
   return (
     <Layout title="Orders">

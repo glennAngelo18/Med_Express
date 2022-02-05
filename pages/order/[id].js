@@ -15,7 +15,6 @@ import {
   List,
   ListItem,
   Card,
-  CircularProgress,
 } from "@material-ui/core";
 // import NextLink from 'next/link';
 // import Image from 'next/image';
@@ -24,7 +23,7 @@ import useStyles from "../../utils/style";
 import { useSnackbar } from "notistack";
 import { getError } from "../../utils/error";
 import axios from "axios";
-import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
+import { usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import { UserContext } from "../../lib/context";
 import { auth, postToJSON, firestore } from "../../lib/firebase";
 
@@ -67,7 +66,7 @@ function reducer(state, action) {
 //Firebase
 
 function Order(props) {
-  const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
+  const [paypalDispatch] = usePayPalScriptReducer();
   const classes = useStyles();
   const router = useRouter();
   const { id } = router.query;
@@ -90,17 +89,13 @@ function Order(props) {
   });
   console.log(shippingClient);
 
-  const [{ loading, error, order }, dispatch] = useReducer(reducer, {
+  const [{ order }, dispatch] = useReducer(reducer, {
     loading: true,
     order: {},
     error: "",
   });
 
   const {
-    paymentMethod,
-    itemsPrice,
-    taxPrice,
-    shippingPrice,
     totalPrice,
     isPaid,
     paidAt,
@@ -147,7 +142,7 @@ function Order(props) {
   }, [orderItem.id, paypalDispatch, user.token]);
   const { enqueueSnackbar } = useSnackbar();
 
-  function createOrder(data, actions) {
+  /*function createOrder(data, actions) {
     return actions.ordr
       .create({
         purchase_unit: [
@@ -181,7 +176,7 @@ function Order(props) {
   }
   function onError(err) {
     enqueueSnackbar(getError(err), { variant: "error" });
-  }
+  }*/
   return (
     <Layout title={`Order ${id}`}>
       <Typography component="h1" variant="h1">

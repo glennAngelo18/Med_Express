@@ -49,7 +49,6 @@ function reducer(state, action) {
 
 function AdminUsers() {
   const { state } = useContext(Store);
-  const router = useRouter();
   const classes = useStyles();
   const { userInfo } = state;
 
@@ -80,6 +79,8 @@ function AdminUsers() {
     } else {
       fetchData();
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [successDelete]);
 
   const { enqueueSnackbar } = useSnackbar();
